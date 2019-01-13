@@ -45,12 +45,14 @@ class TodoItemView: UIView, ViewSetupProtocol {
     
     internal func addConstraints() {
         containerView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        containerView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        containerView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        containerView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
+        containerView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
+        containerView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        // containerView.heightAnchor.constraint(equalToConstant: actionLabel.frame.size.height + 100).isActive = true
         
-        actionLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10).isActive = true
-        actionLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 10).isActive = true
-        actionLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: 10).isActive = true
+        actionLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 0).isActive = true
+        actionLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 0).isActive = true
+        actionLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: 0).isActive = true
         
         containerView.bottomAnchor.constraint(equalTo: actionLabel.bottomAnchor).isActive = true
     }

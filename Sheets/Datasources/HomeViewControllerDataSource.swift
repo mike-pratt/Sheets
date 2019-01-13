@@ -29,13 +29,20 @@ class HomeViewControllerDataSource: NSObject, UICollectionViewDataSource {
         if indexPath.row != days.count - 1 { // Don't show a date for the 'Later' tab.
             cell.dateLabel.text = fetchDate(dayIncrement: indexPath.row)
         }
-        let todoView1 = TodoItemView()
-        let todoView2 = TodoItemView()
-        todoView1.actionLabel.text = "Test 1"
-        todoView2.actionLabel.text = "Test 2222222"
-        cell.todoItemsStackView.addArrangedSubview(todoView1)
-        cell.todoItemsStackView.addArrangedSubview(todoView2)
+        if indexPath.row == 0 {
         
+            if cell.todoItemsStackView.subviews.count < 2 {
+                let todoView1 = TodoItemView()
+                let todoView2 = TodoItemView()
+                let todoView3 = TodoItemView()
+                todoView1.actionLabel.text = "Test 1"
+                todoView2.actionLabel.text = "Test 2222222 Welcome to the jungle baby! Let's get this text going looong."
+                todoView3.actionLabel.text = "Test number 3. It's time to test further items in the stack view Let's get this text going looong. Young sadio was there to witness when the turning point occurred."
+                cell.todoItemsStackView.addArrangedSubview(todoView1)
+                cell.todoItemsStackView.addArrangedSubview(todoView2)
+                cell.todoItemsStackView.addArrangedSubview(todoView3)
+            }
+        }
         return cell
     }
     
