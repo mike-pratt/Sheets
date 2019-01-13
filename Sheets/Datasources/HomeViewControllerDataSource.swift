@@ -29,6 +29,12 @@ class HomeViewControllerDataSource: NSObject, UICollectionViewDataSource {
         if indexPath.row != days.count - 1 { // Don't show a date for the 'Later' tab.
             cell.dateLabel.text = fetchDate(dayIncrement: indexPath.row)
         }
+        let todoView1 = TodoItemView()
+        let todoView2 = TodoItemView()
+        todoView1.actionLabel.text = "Test 1"
+        todoView2.actionLabel.text = "Test 2222222"
+        cell.todoItemsStackView.addArrangedSubview(todoView1)
+        cell.todoItemsStackView.addArrangedSubview(todoView2)
         
         return cell
     }
@@ -41,7 +47,7 @@ class HomeViewControllerDataSource: NSObject, UICollectionViewDataSource {
 //        }
     }
     
-    private func fetchDate(dayIncrement: Int) -> String {
+    private func fetchDate(dayIncrement: Int) -> String { // TODO: Account for Months that have 28, 29, 31 days, etc. i.e. Don't show the 30 Febuary
         let currentDate = Date()
         let calendar = Calendar.current
         let calendarOptions = calendar.dateComponents([.year, .month, .day], from: currentDate)

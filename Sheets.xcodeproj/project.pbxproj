@@ -20,6 +20,7 @@
 		27D0A71621EA49BA001469D4 /* HomeHeaderCollectionViewReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D0A71521EA49BA001469D4 /* HomeHeaderCollectionViewReusableView.swift */; };
 		27D0A71A21EA4FAB001469D4 /* ViewSetupProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D0A71921EA4FAB001469D4 /* ViewSetupProtocol.swift */; };
 		27D0A71D21EA5048001469D4 /* UIColourExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D0A71C21EA5048001469D4 /* UIColourExtension.swift */; };
+		27FF040321EBC3C3004AD3DC /* TodoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FF040221EBC3C3004AD3DC /* TodoItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		27D0A71521EA49BA001469D4 /* HomeHeaderCollectionViewReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderCollectionViewReusableView.swift; sourceTree = "<group>"; };
 		27D0A71921EA4FAB001469D4 /* ViewSetupProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSetupProtocol.swift; sourceTree = "<group>"; };
 		27D0A71C21EA5048001469D4 /* UIColourExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColourExtension.swift; sourceTree = "<group>"; };
+		27FF040221EBC3C3004AD3DC /* TodoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		27D0A6E321EA2FD4001469D4 /* Sheets */ = {
 			isa = PBXGroup;
 			children = (
+				27FF040121EBC3A6004AD3DC /* Views */,
 				27D0A71B21EA5033001469D4 /* Extensions */,
 				27D0A71821EA4F93001469D4 /* Protocols */,
 				27D0A71721EA4DE0001469D4 /* ViewControllers */,
@@ -171,6 +174,14 @@
 				27D0A71C21EA5048001469D4 /* UIColourExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		27FF040121EBC3A6004AD3DC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27FF040221EBC3C3004AD3DC /* TodoItemView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27FF040321EBC3C3004AD3DC /* TodoItemView.swift in Sources */,
 				27D0A70A21EA3FFE001469D4 /* HomeViewControllerDelegate.swift in Sources */,
 				27D0A71D21EA5048001469D4 /* UIColourExtension.swift in Sources */,
 				27D0A6ED21EA2FD4001469D4 /* Sheets.xcdatamodeld in Sources */,
