@@ -13,8 +13,15 @@ class DayOfWeekCollectionViewCell: UICollectionViewCell, ViewSetupProtocol {
     let dayLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Monday"
         label.font = UIFont.boldSystemFont(ofSize: 18)
+        return label
+    }()
+    
+    let dateLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 10)
+        label.textColor = AppConstants.subtitleTextColor
         return label
     }()
     
@@ -31,12 +38,14 @@ class DayOfWeekCollectionViewCell: UICollectionViewCell, ViewSetupProtocol {
     internal func setupView() {
         backgroundColor = AppConstants.homeBackgroundColor
         addSubview(dayLabel)
+        addSubview(dateLabel)
         addConstraints()
     }
     
     internal func addConstraints() {
         dayLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
         dayLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
-//        dayLabel.
+        dateLabel.topAnchor.constraint(equalTo: dayLabel.bottomAnchor, constant: 0).isActive = true
+        dateLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
     }
 }

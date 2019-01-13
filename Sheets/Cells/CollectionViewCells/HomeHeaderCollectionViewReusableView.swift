@@ -46,7 +46,7 @@ class HomeHeaderCollectionViewReusableView: UICollectionReusableView, ViewSetupP
     internal func addConstraints() {
         scheduleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
         scheduleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
-        subtitleLabel.topAnchor.constraint(equalTo: scheduleLabel.bottomAnchor, constant: 5).isActive = true
+        subtitleLabel.topAnchor.constraint(equalTo: scheduleLabel.bottomAnchor, constant: 0).isActive = true
         subtitleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
     }
 }
