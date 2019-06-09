@@ -19,7 +19,6 @@ class HomeViewController: UICollectionViewController {
         self.flowLayout = layout as? UICollectionViewFlowLayout
         self.flowLayout?.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 75)
         self.flowLayout?.estimatedItemSize = CGSize(width: UIScreen.main.bounds.width, height: 100)
-       // self.flowLayout?.estimatedItemSize = CGSize(width: 1, height: 1)
     }
     
     required init?(coder aDecoder: NSCoder) {

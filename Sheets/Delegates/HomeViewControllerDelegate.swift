@@ -17,6 +17,7 @@ class HomeViewControllerDelegate: NSObject, UICollectionViewDelegateFlowLayout {
         self.dataSource = dataSource as? HomeViewControllerDataSource
     }
     
+    // Size is given in HomeViewController.
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        return CGSize(width: UIScreen.main.bounds.width, height: 0) // Height of cell should be done dynamically
 //    }

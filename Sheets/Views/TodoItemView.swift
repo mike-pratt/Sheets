@@ -38,7 +38,6 @@ class TodoItemView: UIView, ViewSetupProtocol {
     }
     
     internal func setupView() {
-        backgroundColor = .cyan
         addSubview(containerView)
         containerView.addSubview(actionLabel)
         addConstraints()

@@ -16,17 +16,10 @@ class DayOfWeekCollectionViewCell: UICollectionViewCell, ViewSetupProtocol {
         return width
     }()
     
-    let containerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .red
-        return view
-    }()
-    
     let stackViewContainerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-         view.backgroundColor = .blue
+        // view.backgroundColor = .blue
         return view
     }()
     
@@ -55,9 +48,6 @@ class DayOfWeekCollectionViewCell: UICollectionViewCell, ViewSetupProtocol {
         return stackView
     }()
     
-    var containerViewWidthConstraint: NSLayoutConstraint?
-//    var containerViewHeightConstraint: NSLayoutConstraint?
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -71,7 +61,6 @@ class DayOfWeekCollectionViewCell: UICollectionViewCell, ViewSetupProtocol {
     internal func setupView() {
         backgroundColor = AppConstants.homeBackgroundColor
         contentView.translatesAutoresizingMaskIntoConstraints = false
-//        contentView.addSubview(containerView)
         contentView.addSubview(dayLabel)
         contentView.addSubview(dateLabel)
         contentView.addSubview(stackViewContainerView)
@@ -85,9 +74,6 @@ class DayOfWeekCollectionViewCell: UICollectionViewCell, ViewSetupProtocol {
     }
     
     internal func addConstraints() {
-//        containerView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-//        containerView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
-        
         dayLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
         dayLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
         dateLabel.topAnchor.constraint(equalTo: dayLabel.bottomAnchor, constant: 0).isActive = true
@@ -105,7 +91,6 @@ class DayOfWeekCollectionViewCell: UICollectionViewCell, ViewSetupProtocol {
         if let lastSubview = contentView.subviews.last {
             contentView.bottomAnchor.constraint(equalTo: lastSubview.bottomAnchor, constant: 10).isActive = true
         }
-
     }
 
 }
