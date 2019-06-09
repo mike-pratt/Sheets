@@ -18,6 +18,7 @@ class HomeViewController: UICollectionViewController {
         super.init(collectionViewLayout: layout)
         self.flowLayout = layout as? UICollectionViewFlowLayout
         self.flowLayout?.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 75)
+        self.flowLayout?.estimatedItemSize = CGSize(width: UIScreen.main.bounds.width, height: 100)
        // self.flowLayout?.estimatedItemSize = CGSize(width: 1, height: 1)
     }
     
@@ -35,7 +36,7 @@ class HomeViewController: UICollectionViewController {
         collectionView.backgroundColor = AppConstants.homeBackgroundColor
         collectionView.alwaysBounceVertical = true
         cvDataSource = HomeViewControllerDataSource()
-        cvDelegate = HomeViewControllerDelegate()
+        cvDelegate = HomeViewControllerDelegate(dataSource: cvDataSource!)
         collectionView.dataSource = cvDataSource
         collectionView.delegate = cvDelegate
         collectionView.register(DayOfWeekCollectionViewCell.self, forCellWithReuseIdentifier: AppConstants.todoItemCellId)

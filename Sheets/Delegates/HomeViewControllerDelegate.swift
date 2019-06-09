@@ -10,7 +10,14 @@ import Foundation
 import UIKit
 
 class HomeViewControllerDelegate: NSObject, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width, height: 200)
+    
+    var dataSource: HomeViewControllerDataSource!
+    
+    init(dataSource: UICollectionViewDataSource) {
+        self.dataSource = dataSource as? HomeViewControllerDataSource
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: UIScreen.main.bounds.width, height: 0) // Height of cell should be done dynamically
+//    }
 }

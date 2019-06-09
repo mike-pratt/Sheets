@@ -35,23 +35,28 @@ class HomeViewControllerDataSource: NSObject, UICollectionViewDataSource {
                 let todoView1 = TodoItemView()
                 let todoView2 = TodoItemView()
                 let todoView3 = TodoItemView()
+                let todoView4 = TodoItemView()
+                let todoView5 = TodoItemView()
                 todoView1.actionLabel.text = "Test 1"
                 todoView2.actionLabel.text = "Test 2222222 Welcome to the jungle baby! Let's get this text going looong."
                 todoView3.actionLabel.text = "Test number 3. It's time to test further items in the stack view Let's get this text going looong. Young sadio was there to witness when the turning point occurred."
+                todoView4.actionLabel.text = "Test number 3. It's time to test further items in the stack view Let's get this text going looong. Young sadio was there to witness when the turning point occurred."
+                todoView5.actionLabel.text = "Test number 3. It's time to test further items in the stack view Let's get this text going looong. Young sadio was there to witness when the turning point occurred."
+            
                 cell.todoItemsStackView.addArrangedSubview(todoView1)
                 cell.todoItemsStackView.addArrangedSubview(todoView2)
+
                 cell.todoItemsStackView.addArrangedSubview(todoView3)
+                cell.todoItemsStackView.addArrangedSubview(todoView4)
+                cell.todoItemsStackView.addArrangedSubview(todoView5)
             }
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        if kind == UICollectionView.elementKindSectionHeader {
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AppConstants.homeHeaderViewId, for: indexPath) as! HomeHeaderCollectionViewReusableView
-            
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AppConstants.homeHeaderViewId, for: indexPath) as! HomeHeaderCollectionViewReusableView            
             return headerView
-//        }
     }
     
     private func fetchDate(dayIncrement: Int) -> String { // TODO: Account for Months that have 28, 29, 31 days, etc. i.e. Don't show the 30 Febuary

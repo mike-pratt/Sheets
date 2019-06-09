@@ -38,17 +38,21 @@ class TodoItemView: UIView, ViewSetupProtocol {
     }
     
     internal func setupView() {
+        backgroundColor = .cyan
         addSubview(containerView)
         containerView.addSubview(actionLabel)
         addConstraints()
     }
     
     internal func addConstraints() {
+        self.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        
         containerView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         containerView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
         containerView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
-        containerView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        // containerView.heightAnchor.constraint(equalToConstant: actionLabel.frame.size.height + 100).isActive = true
+//        containerView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+         containerView.heightAnchor.constraint(equalToConstant: actionLabel.frame.size.height + 50).isActive = true
         
         actionLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 0).isActive = true
         actionLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 0).isActive = true

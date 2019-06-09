@@ -10,17 +10,23 @@ import UIKit
 
 class DayOfWeekCollectionViewCell: UICollectionViewCell, ViewSetupProtocol {
     
+    lazy var width: NSLayoutConstraint = {
+        let width = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
+        width.isActive = true
+        return width
+    }()
+    
     let containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        // view.backgroundColor = .red
+        view.backgroundColor = .red
         return view
     }()
     
     let stackViewContainerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        // view.backgroundColor = .blue
+         view.backgroundColor = .blue
         return view
     }()
     
@@ -64,38 +70,42 @@ class DayOfWeekCollectionViewCell: UICollectionViewCell, ViewSetupProtocol {
     
     internal func setupView() {
         backgroundColor = AppConstants.homeBackgroundColor
-        addSubview(containerView)
-        containerView.addSubview(dayLabel)
-        containerView.addSubview(dateLabel)
-        containerView.addSubview(stackViewContainerView)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+//        contentView.addSubview(containerView)
+        contentView.addSubview(dayLabel)
+        contentView.addSubview(dateLabel)
+        contentView.addSubview(stackViewContainerView)
         stackViewContainerView.addSubview(todoItemsStackView)
         addConstraints()
     }
     
+    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+        width.constant = bounds.size.width
+        return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 1))
+    }
+    
     internal func addConstraints() {
-        containerView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        containerView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
-//        containerView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-//        containerView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-//        containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        containerView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+//        containerView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+//        containerView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
         
-        dayLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10).isActive = true
-        dayLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20).isActive = true
+        dayLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
+        dayLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
         dateLabel.topAnchor.constraint(equalTo: dayLabel.bottomAnchor, constant: 0).isActive = true
-        dateLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20).isActive = true
+        dateLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
         
         stackViewContainerView.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 5).isActive = true
-        stackViewContainerView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 0).isActive = true
-        stackViewContainerView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: 0).isActive = true
-        stackViewContainerView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 10).isActive = true
+        stackViewContainerView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
+        stackViewContainerView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
+        stackViewContainerView.heightAnchor.constraint(equalTo: todoItemsStackView.heightAnchor, multiplier: 1).isActive = true
         
         todoItemsStackView.topAnchor.constraint(equalTo: stackViewContainerView.topAnchor, constant: 1).isActive = true
         todoItemsStackView.leftAnchor.constraint(equalTo: stackViewContainerView.leftAnchor, constant: 1).isActive = true
         todoItemsStackView.rightAnchor.constraint(equalTo: stackViewContainerView.rightAnchor, constant: -1).isActive = true
-        todoItemsStackView.bottomAnchor.constraint(equalTo: stackViewContainerView.bottomAnchor, constant: -1).isActive = true
-//
-//        containerView.bottomAnchor.constraint(equalTo: todoItemsStackView.bottomAnchor).isActive = true
+        
+        if let lastSubview = contentView.subviews.last {
+            contentView.bottomAnchor.constraint(equalTo: lastSubview.bottomAnchor, constant: 10).isActive = true
+        }
+
     }
 
 }
