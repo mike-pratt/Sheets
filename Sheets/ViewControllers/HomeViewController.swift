@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UICollectionViewController {
+class HomeViewController: UICollectionViewController, ShowTodoDetailViewDelegateProtocol {
 
     var cvDelegate: HomeViewControllerDelegate?
     var cvDataSource: HomeViewControllerDataSource?
@@ -35,12 +35,19 @@ class HomeViewController: UICollectionViewController {
         collectionView.backgroundColor = AppConstants.homeBackgroundColor
         collectionView.alwaysBounceVertical = true
         cvDataSource = HomeViewControllerDataSource()
+        
+        // Not ideal way to do this, but can't figure out alternative way.
+        // This is done so that the Home header reusable view can call the showDetailTodo delegate function.
+        cvDataSource?.viewController = self
         cvDelegate = HomeViewControllerDelegate(dataSource: cvDataSource!)
         collectionView.dataSource = cvDataSource
         collectionView.delegate = cvDelegate
         collectionView.register(DayOfWeekCollectionViewCell.self, forCellWithReuseIdentifier: AppConstants.todoItemCellId)
         collectionView.register(HomeHeaderCollectionViewReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AppConstants.homeHeaderViewId)
-        print(AppConstants.homeHeaderViewId)
+    }
+    
+    func showTodoDetailView() {
+        present(TodoDetailViewController(), animated: true, completion: nil)
     }
 
 

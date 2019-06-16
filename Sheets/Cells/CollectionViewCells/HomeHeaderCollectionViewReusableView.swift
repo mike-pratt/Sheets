@@ -10,6 +10,8 @@ import UIKit
 
 class HomeHeaderCollectionViewReusableView: UICollectionReusableView, ViewSetupProtocol {
     
+    var showTodoDetailViewDelegate: ShowTodoDetailViewDelegateProtocol?
+    
     let scheduleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -68,6 +70,8 @@ class HomeHeaderCollectionViewReusableView: UICollectionReusableView, ViewSetupP
     
     @objc
     internal func showAddTodoModal() {
-        print("Test todo item")
+        if showTodoDetailViewDelegate != nil {
+            showTodoDetailViewDelegate?.showTodoDetailView()
+        }
     }
 }

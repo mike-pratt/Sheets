@@ -14,6 +14,8 @@ class HomeViewControllerDataSource: NSObject, UICollectionViewDataSource {
     let months: [String] = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     let days: [String] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Later"]
     
+    var viewController: HomeViewController?
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -55,7 +57,8 @@ class HomeViewControllerDataSource: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AppConstants.homeHeaderViewId, for: indexPath) as! HomeHeaderCollectionViewReusableView            
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AppConstants.homeHeaderViewId, for: indexPath) as! HomeHeaderCollectionViewReusableView
+            headerView.showTodoDetailViewDelegate = viewController!
             return headerView
     }
     

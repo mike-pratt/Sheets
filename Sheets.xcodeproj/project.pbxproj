@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		274F226022B686B1001B4BFA /* TodoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274F225F22B686B1001B4BFA /* TodoDetailViewController.swift */; };
+		274F226222B68852001B4BFA /* ShowTodoDetailViewDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274F226122B68852001B4BFA /* ShowTodoDetailViewDelegateProtocol.swift */; };
 		27D0A6E521EA2FD4001469D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D0A6E421EA2FD4001469D4 /* AppDelegate.swift */; };
 		27D0A6E721EA2FD4001469D4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D0A6E621EA2FD4001469D4 /* HomeViewController.swift */; };
 		27D0A6ED21EA2FD4001469D4 /* Sheets.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27D0A6EB21EA2FD4001469D4 /* Sheets.xcdatamodeld */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		274F225F22B686B1001B4BFA /* TodoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewController.swift; sourceTree = "<group>"; };
+		274F226122B68852001B4BFA /* ShowTodoDetailViewDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTodoDetailViewDelegateProtocol.swift; sourceTree = "<group>"; };
 		27D0A6E121EA2FD4001469D4 /* Sheets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sheets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27D0A6E421EA2FD4001469D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27D0A6E621EA2FD4001469D4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				27D0A6E621EA2FD4001469D4 /* HomeViewController.swift */,
+				274F225F22B686B1001B4BFA /* TodoDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 		27D0A71821EA4F93001469D4 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				274F226122B68852001B4BFA /* ShowTodoDetailViewDelegateProtocol.swift */,
 				27D0A71921EA4FAB001469D4 /* ViewSetupProtocol.swift */,
 			);
 			path = Protocols;
@@ -289,6 +295,8 @@
 				27D0A71D21EA5048001469D4 /* UIColourExtension.swift in Sources */,
 				27D0A6ED21EA2FD4001469D4 /* Sheets.xcdatamodeld in Sources */,
 				27D0A6E721EA2FD4001469D4 /* HomeViewController.swift in Sources */,
+				274F226222B68852001B4BFA /* ShowTodoDetailViewDelegateProtocol.swift in Sources */,
+				274F226022B686B1001B4BFA /* TodoDetailViewController.swift in Sources */,
 				27D0A70C21EA40B0001469D4 /* HomeViewControllerDataSource.swift in Sources */,
 				27D0A71A21EA4FAB001469D4 /* ViewSetupProtocol.swift in Sources */,
 				27D0A71221EA435F001469D4 /* AppConstants.swift in Sources */,
