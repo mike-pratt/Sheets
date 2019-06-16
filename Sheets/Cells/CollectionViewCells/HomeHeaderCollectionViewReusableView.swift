@@ -27,6 +27,18 @@ class HomeHeaderCollectionViewReusableView: UICollectionReusableView, ViewSetupP
         return label
     }()
     
+    let addTodoButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("+", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .gray
+        button.layer.cornerRadius = 15
+        button.clipsToBounds = true
+        button.addTarget(self, action: #selector(showAddTodoModal), for: .touchUpInside)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -40,6 +52,7 @@ class HomeHeaderCollectionViewReusableView: UICollectionReusableView, ViewSetupP
         backgroundColor = AppConstants.homeBackgroundColor
         addSubview(scheduleLabel)
         addSubview(subtitleLabel)
+        addSubview(addTodoButton)
         addConstraints()
     }
     
@@ -48,5 +61,13 @@ class HomeHeaderCollectionViewReusableView: UICollectionReusableView, ViewSetupP
         scheduleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
         subtitleLabel.topAnchor.constraint(equalTo: scheduleLabel.bottomAnchor, constant: 0).isActive = true
         subtitleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
+        
+        addTodoButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
+        addTodoButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
+    }
+    
+    @objc
+    internal func showAddTodoModal() {
+        print("Test todo item")
     }
 }
